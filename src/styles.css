@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/materialize-css/dist/css/materialize.css";
+@import '~font-awesome/css/font-awesome.css';
+
+
+.btn{
+    vertical-align: top;
+}
+
+.placaw{
+    width: 20%;
+    padding: 0.4rem;
+    vertical-align: baseline; 
+    cursor: pointer;
+}
+
+.acaow{
+    width: 10%;
+    text-align: center;
+    padding: 0.4rem;
+    vertical-align: baseline; 
+    cursor: pointer;
+}
+
+.propw{
+    width: 30%;
+    padding: 0.4rem;
+    vertical-align: baseline; 
+    cursor: pointer;
+}
+
+tbody{
+    line-height: 0.8;
+    font-size: 0.9rem;   
+}
+
+.logo{
+    cursor: pointer;
+}
+
+header{
+    position: fixed;
+    z-index: 1;
+    margin-top: -0.5em;
+    width: 100%
+}
