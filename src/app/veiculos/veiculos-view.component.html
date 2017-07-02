@@ -2,7 +2,7 @@
 
     <div  style="margin-top:5em" class="card-header">                
 
-        <form name="form" (ngSubmit)="f.form.valid && veiculoForm(f)" #f="ngForm" novalidate>
+        <form name="form" (ngSubmit)="f.form.valid && veiculoForm(model)" #f="ngForm" novalidate>
 
                 <div class="row"> 
                     <div class="col-sm-10">
@@ -58,7 +58,7 @@
 
                 </div>
                 <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <div class="form-group">
                             <label>Inserir Imagem</label>
                             <input type="file"
@@ -72,7 +72,7 @@
 
                 <div *ngIf="idVeiculo" class="row">
                     <div class="col-sm-4">
-                        <img src="{{model.imagem}}" width="300px" alt="">
+                        <img src="{{model.imagem}}" width="330px" alt="">
                     </div>                    
                 </div>                 
                 

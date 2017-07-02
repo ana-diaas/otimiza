@@ -33,8 +33,7 @@ export class VeiculosViewComponent implements OnInit {
             this.idVeiculo = params['idVeiculo'];
 
             if(this.idVeiculo){
-                console.log('this.idVeiculo fora',this.idVeiculo);
-
+                
                 this.veiculosService.listVeiculos().forEach(element => {
                     if(element.id == this.idVeiculo){
                         this.model = element;
@@ -46,15 +45,23 @@ export class VeiculosViewComponent implements OnInit {
     });
 
     this.tipoVeiculo = this.veiculosService.listTipoVeiculos();
-
   
   }
 
   veiculoForm(veiculoForm){ 
 
-      this.veiculoSalvo = this.veiculosService.pushVeiculo(veiculoForm.value, this.imagens);
-      alert('Veiculo Salvo com sucesso! Id: ' + this.veiculoSalvo.id);
+      if(this.idVeiculo){
+            
+            this.veiculoSalvo = this.veiculosService.updateVeiculo(this.idVeiculo, veiculoForm);
+             alert('Veiculo Salvo com sucesso! Id: ' + this.veiculoSalvo.id + 
+                                           ' | Placa: ' + this.veiculoSalvo.placa +
+                                           'Proprietário:' + this.veiculoSalvo.proprietario);    
+      }
 
+      else{
+            this.veiculoSalvo = this.veiculosService.pushVeiculo(veiculoForm.value, this.imagens);
+            alert('Veiculo Salvo com sucesso! Id: ' + this.veiculoSalvo.id);
+      }
   }
 
   imagemVeiculo($event) : void {
@@ -73,7 +80,6 @@ export class VeiculosViewComponent implements OnInit {
       }
    
   }
-
 
   ngOnDestroy(){
     this.inscricao.unsubscribe();

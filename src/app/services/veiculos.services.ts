@@ -105,4 +105,18 @@ export class VeiculosService {
       }
   }
 
+  updateVeiculo(idVeiculo, veiculoForm){
+      
+      for(let i = 0; i < this.veiculos.length; i++){
+          if(this.veiculos[i].id == idVeiculo){
+
+              this.veiculos[i].placa = veiculoForm.placa;
+              this.veiculos[i].proprietario = veiculoForm.proprietario;
+              this.veiculos[i].tipo_veiculo = veiculoForm.tipo_veiculo;
+              
+              return this.veiculos[i];
+          }
+      }
+  }
+
 }
